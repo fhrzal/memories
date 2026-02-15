@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine 🌅❤️ - Sunset Love Story</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================== RESET & BASE ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, #2c1810, #4a2c1a, #8b4513, #cd853f, #f4a460, #ffa07a);
+            min-height: 100vh;
+            position: relative;
+            color: #fff;
+        }
+
+        /* ==================== BACKGROUND ELEMENTS ==================== */
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Sunset Sun */
+        .sun {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle at 30% 30%, #fff5e6 0%, #ffe4b5 15%, #ffa07a 40%, #ff6347 70%, #d2691e 100%);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 80px rgba(255, 160, 122, 0.8),
+                0 0 150px rgba(255, 140, 0, 0.5),
+                inset -20px -20px 50px rgba(0, 0, 0, 0.2);
+            animation: sunGlow 4s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            filter: blur(1px);
+        }
+
+        .sun:hover {
+            transform: translateX(-50%) scale(1.05);
+            filter: blur(0);
+        }
+
+        /* Cute sun eyes when clicked */
+        .sun.blushing::before,
+        .sun.blushing::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(139, 69, 19, 0.6);
+            border-radius: 50%;
+            top: 40%;
+            animation: eyeWink 0.5s ease;
+        }
+
+        .sun.blushing::before {
+            left: 35%;
+        }
+
+        .sun.blushing::after {
+            right: 35%;
+        }
+
+        @keyframes eyeWink {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.1); }
+        }
+
+        @keyframes sunGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 80px rgba(255, 160, 122, 0.8),
+                    0 0 150px rgba(255, 140, 0, 0.5),
+                    inset -20px -20px 50px rgba(0, 0, 0, 0.2);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 120px rgba(255, 160, 122, 1),
+                    0 0 200px rgba(255, 140, 0, 0.7),
+                    inset -20px -20px 50px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* Clouds */
+        .cloud {
+            position: absolute;
+            background: linear-gradient(to bottom, rgba(255, 218, 185, 0.6), rgba(255, 160, 122, 0.4));
+            border-radius: 100px;
+            opacity: 0.7;
+            animation: cloudFloat 30s linear infinite;
+            box-shadow: 
+                0 5px 15px rgba(255, 140, 0, 0.3),
+                inset 0 -5px 10px rgba(255, 140, 0, 0.2);
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: linear-gradient(to bottom, rgba(255, 218, 185, 0.6), rgba(255, 160, 122, 0.4));
+            border-radius: 100px;
+            box-shadow: inset 0 -5px 10px rgba(255, 140, 0, 0.2);
+        }
+
+        .cloud1 { 
+            width: 100px; 
+            height: 40px; 
+            top: 15%; 
+            left: -100px;
+            animation-duration: 25s;
+        }
+        .cloud1::before { width: 50px; height: 50px; top: -25px; left: 10px; }
+        .cloud1::after { width: 60px; height: 35px; top: -15px; right: 10px; }
+
+        .cloud2 { 
+            width: 120px; 
+            height: 45px; 
+            top: 25%; 
+            left: -120px;
+            animation-duration: 35s;
+            animation-delay: 5s;
+        }
+        .cloud2::before { width: 55px; height: 55px; top: -28px; left: 15px; }
+        .cloud2::after { width: 65px; height: 40px; top: -18px; right: 15px; }
+
+        .cloud3 { 
+            width: 90px; 
+            height: 35px; 
+            top: 35%; 
+            left: -90px;
+            animation-duration: 30s;
+            animation-delay: 10s;
+        }
+        .cloud3::before { width: 45px; height: 45px; top: -22px; left: 12px; }
+        .cloud3::after { width: 55px; height: 32px; top: -16px; right: 12px; }
+
+        @keyframes cloudFloat {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(100vw + 200px)); }
+        }
+
+        /* Birds */
+        .bird {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 20%;
+            animation: birdFly 15s linear infinite;
+        }
+
+        .bird::before,
+        .bird::after {
+            content: '';
+            position: absolute;
+            background: rgba(44, 24, 16, 0.6);
+            width: 14px;
+            height: 2px;
+            border-radius: 1px;
+        }
+
+        .bird::before {
+            transform: rotate(-25deg);
+            animation: wingFlap 0.6s ease-in-out infinite;
+        }
+
+        .bird::after {
+            transform: rotate(25deg);
+            animation: wingFlap 0.6s ease-in-out infinite;
+            animation-delay: 0.3s;
+        }
+
+        .bird1 { left: -30px; animation-duration: 12s; }
+        .bird2 { left: -30px; top: 18%; animation-duration: 15s; animation-delay: 3s; }
+        .bird3 { left: -30px; top: 22%; animation-duration: 18s; animation-delay: 6s; }
+
+        @keyframes birdFly {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(100vw + 60px)); }
+        }
+
+        @keyframes wingFlap {
+            0%, 100% { transform: rotate(-30deg) scaleY(1); }
+            50% { transform: rotate(-45deg) scaleY(0.7); }
+        }
+
+        /* Floating Hearts */
+        .floating-heart {
+            position: fixed;
+            bottom: -50px;
+            font-size: 16px;
+            opacity: 0.4;
+            pointer-events: none;
+            animation: floatUp 12s linear infinite;
+            z-index: 10;
+            color: #ffd7ba;
+            filter: blur(0.5px);
+        }
+
+        @keyframes floatUp {
+            0% { 
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.7;
+            }
+            100% { 
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Cursor Hearts */
+        .cursor-heart {
+            position: fixed;
+            pointer-events: none;
+            font-size: 16px;
+            animation: cursorHeartFloat 2s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes cursorHeartFloat {
+            0% { 
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            50% { 
+                transform: translate(-50%, -80px) scale(1);
+                opacity: 1;
+            }
+            100% { 
+                transform: translate(-50%, -120px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* ==================== CONTENT CONTAINER ==================== */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 60px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease;
+            position: relative;
+        }
+
+        .hero h1::after {
+            content: '✨';
+            position: absolute;
+            right: -60px;
+            top: -20px;
+            font-size: 2rem;
+            animation: sparkleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkleFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            50% { 
+                transform: translateY(-15px) rotate(20deg);
+                opacity: 1;
+            }
+        }
+
+        .hero .subtitle {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .typing-text {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            font-style: italic;
+            margin-bottom: 40px;
+            min-height: 60px;
+            opacity: 0;
+            animation: fadeIn 1s ease 1s forwards;
+        }
+
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.5s forwards;
+        }
+
+        .cute-button {
+            background: linear-gradient(135deg, #d4a574, #c9955a);
+            color: #fff;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 
+                0 4px 15px rgba(139, 69, 19, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cute-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 
+                0 6px 20px rgba(139, 69, 19, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #ddb77f, #d4a574);
+        }
+
+        .cute-button:active {
+            transform: translateY(-1px) scale(1.01);
+        }
+
+        /* ==================== PHOTO GALLERY ==================== */
+        .photo-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            text-align: center;
+            margin-bottom: 60px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .photo-card {
+            background: #fff;
+            padding: 20px;
+            padding-bottom: 60px;
+            border-radius: 2px;
+            box-shadow: 
+                0 4px 6px rgba(0, 0, 0, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: rotate(var(--rotate));
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: visible;
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.03) translateY(-8px);
+            box-shadow: 
+                0 8px 12px rgba(0, 0, 0, 0.15),
+                0 20px 50px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .photo-card::before {
+            content: attr(data-sticker);
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 1.8rem;
+            z-index: 2;
+            animation: stickerBounce 3s ease-in-out infinite;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        @keyframes stickerBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-3px) rotate(5deg); }
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #f5e6d3, #e8d4c0, #d4bfa8);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .photo-placeholder::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 70%
+            );
+            animation: photoShine 4s ease-in-out infinite;
+        }
+
+        @keyframes photoShine {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        .photo-caption {
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #5d4e37;
+            text-align: center;
+            font-weight: 700;
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+        }
+
+        /* ==================== COUNTER SECTION ==================== */
+        .counter-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.3), rgba(160, 82, 45, 0.2));
+            backdrop-filter: blur(10px);
+            margin: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .counter-section::before {
+            content: '💑';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: heartBeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .counter-text {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 500;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .counter-number {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            color: #ffd7ba;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(255, 215, 186, 0.3);
+            display: block;
+            margin: 20px 0;
+            font-family: 'Poppins', sans-serif;
+            transition: transform 0.3s ease;
+        }
+
+        .counter-number:hover {
+            transform: scale(1.05);
+        }
+
+        /* ==================== LETTER SECTION ==================== */
+        .letter-section {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 50px;
+            background: linear-gradient(135deg, #f5f5dc, #f0e8d8);
+            border-radius: 10px;
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            color: #4a3c2a;
+        }
+
+        .letter-title {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #8b5a3c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .letter-button {
+            display: block;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #a0826d, #8b7355);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 
+                0 4px 15px rgba(139, 69, 19, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .letter-button::before {
+            content: '💌';
+            position: absolute;
+            left: 15px;
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+
+        .letter-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 
+                0 6px 20px rgba(139, 69, 19, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .letter-button:hover::before {
+            animation: heartBeat 0.5s ease-in-out infinite;
+        }
+
+        .letter-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #5d4e37;
+            display: none;
+        }
+
+        .letter-content.show {
+            display: block;
+            animation: fadeInUp 1s ease;
+        }
+
+        .letter-content p {
+            margin-bottom: 20px;
+        }
+
+        /* ==================== MUSIC CONTROLS ==================== */
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.9), rgba(201, 149, 90, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .music-control::after {
+            content: 'Play some romantic tunes? 🎶';
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background: rgba(245, 245, 220, 0.95);
+            color: #5d4e37;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .music-control:hover::after {
+            opacity: 1;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #f5f5dc, #f0e8d8);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            text-align: center;
+            color: #4a3c2a;
+            animation: scaleIn 0.4s ease;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #8b5a3c;
+        }
+
+        .modal h2 {
+            font-family: 'Pacifico', cursive;
+            color: #8b5a3c;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .modal p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #5d4e37;
+        }
+
+        /* ==================== CONFETTI ==================== */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff5e62;
+            pointer-events: none;
+            z-index: 9999;
+            animation: confettiFall 3s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% { 
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ==================== MINI GAME ==================== */
+        .game-section {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 40px;
+            background: linear-gradient(135deg, #f5f5dc, #f0e8d8);
+            border-radius: 15px;
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            text-align: center;
+            color: #4a3c2a;
+            position: relative;
+        }
+
+        .game-section::before {
+            content: '🎯';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 2.5rem;
+            animation: floatingIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatingIcon {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(10deg); }
+        }
+
+        .game-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            color: #8b5a3c;
+            margin-bottom: 20px;
+        }
+
+        .game-area {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #e8d4c0, #d4bfa8);
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: crosshair;
+            margin: 20px 0;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .falling-heart {
+            position: absolute;
+            font-size: 2rem;
+            cursor: pointer;
+            animation: fall 3s linear;
+            user-select: none;
+        }
+
+        @keyframes fall {
+            0% { top: -50px; }
+            100% { top: 100%; }
+        }
+
+        .game-score {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #8b5a3c;
+            margin: 20px 0;
+        }
+
+        .game-message {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #8b5a3c;
+            min-height: 30px;
+            margin: 20px 0;
+        }
+
+        /* ==================== MUSIC CONTROLS ==================== */
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ==================== SECRET MESSAGE ==================== */
+        .secret-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(135deg, #f5f5dc, #f0e8d8);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            z-index: 3000;
+            text-align: center;
+            max-width: 400px;
+            color: #4a3c2a;
+        }
+
+        .secret-message.show {
+            animation: secretPop 0.5s ease forwards;
+        }
+
+        @keyframes secretPop {
+            0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) scale(1.05) rotate(2deg); }
+            100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+        }
+
+        .secret-message h2 {
+            font-family: 'Pacifico', cursive;
+            color: #8b5a3c;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .secret-message p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #5d4e37;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cute-button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .sun {
+                width: 180px;
+                height: 180px;
+            }
+
+            .letter-section {
+                padding: 30px;
+            }
+        }
+
+        /* ==================== UTILITIES ==================== */
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+                         0 0 30px rgba(255, 255, 255, 0.6),
+                         0 0 40px rgba(255, 255, 255, 0.4);
+        }
+
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==================== SCROLL INDICATOR ==================== */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease 2s forwards;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .scroll-arrow {
+            width: 30px;
+            height: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .scroll-arrow::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: scrollDot 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollDot {
+            0% { 
+                top: 8px;
+                opacity: 1;
+            }
+            50% { 
+                top: 30px;
+                opacity: 0.5;
+            }
+            100% { 
+                top: 8px;
+                opacity: 1;
+            }
+        }
+        .photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+    <!-- ==================== BACKGROUND ELEMENTS ==================== -->
+    <div class="bg-container">
+        <div class="sun" id="sun"></div>
+        
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+        
+        <div class="bird bird1"></div>
+        <div class="bird bird2"></div>
+        <div class="bird bird3"></div>
+    </div>
+
+    <!-- ==================== MUSIC CONTROL ==================== -->
+    <button class="music-control" id="musicToggle" title="Toggle Music">🎵</button>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <div class="content">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h1 class="text-glow">Sunset Memories 🌅❤️</h1>
+            <p class="subtitle">Even the sunset feels jealous of us.</p>
+            <div class="typing-text" id="typingText"></div>
+            <div class="button-group">
+                <button class="cute-button" id="hugButton">Peyuk Jauh 🤗</button>
+                <button class="cute-button" id="loveButton">Tau Ngga Sekngkuu 💕</button>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll untuk cerita kita ↓</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- PHOTO GALLERY SECTION -->
+        <section class="photo-section fade-in-on-scroll">
+            <h2 class="section-title">Our Sunset Moments</h2>
+            <div class="photo-grid">
+                <div class="photo-card" style="--rotate: 2deg;"  data-sticker="🌇">
+                    <div class="photo-placeholder">
+                    <img src="images/photo1.jpg" alt="Sunset date" class="photo-img">
+                    </div>
+                    <p class="photo-caption">waiting for the sunset 🌇</p>
+                </div>
+                <div class="photo-card" style="--rotate: -3deg;" data-sticker="🍟">
+                    <div class="photo-placeholder">
+                    <img src="images/photo6.jpg" alt="Sunset date" class="photo-img">
+                    </div>
+                    <p class="photo-caption">You and blue sky</p>
+                </div>
+                <div class="photo-card" style="--rotate: 1deg;" data-sticker="🤭">
+                    <div class="photo-placeholder">
+                    <img src="images/photo3.jpg" alt="Sunset date" class="photo-img">
+                    </div>
+                    <p class="photo-caption">Gatau lu mantau apa 🤭</p>
+                </div>
+                <div class="photo-card" style="--rotate: -2deg;" data-sticker="🥰">
+                    <div class="photo-placeholder">
+                    <img src="images/photo4.jpg" alt="Sunset date" class="photo-img">
+                    </div>
+                    <p class="photo-caption">Still my favorite partner 🥰</p>
+                </div>
+                <div class="photo-card" style="--rotate: 3deg;" data-sticker="✨">
+                    <div class="photo-placeholder">
+                    <img src="images/photo5.jpg" alt="Sunset date" class="photo-img">
+                    </div>
+                    <p class="photo-caption">Lope lope ✨</p>
+                </div>
+                <div class="photo-card" style="--rotate: -1deg;" data-sticker="💫">
+                    <div class="photo-placeholder">
+                    <img src="images/photo7.jpg" alt="Sunset date" class="photo-img">
+                    </div>
+                    <p class="photo-caption">Creating memories 💫</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUNTER SECTION -->
+        <section class="counter-section fade-in-on-scroll">
+            <p class="counter-text">
+                Already survived being this cute for
+                <span class="counter-number" id="daysCounter">365</span>
+                after this memory 😎
+            </p>
+        </section>
+
+        <!-- MINI GAME SECTION -->
+        <section class="game-section fade-in-on-scroll">
+            <h2 class="game-title">Catch the Hearts! 💕</h2>
+            <p>Tangkap 5 hati untuk unlock pesan rahasia!</p>
+            <div class="game-area" id="gameArea"></div>
+            <div class="game-score">Score: <span id="gameScore">0</span> / 5</div>
+            <div class="game-message" id="gameMessage"></div>
+        </section>
+
+        <!-- LETTER SECTION -->
+        <section class="letter-section fade-in-on-scroll">
+            <h2 class="letter-title">A Little Letter Before The Sun Sets</h2>
+            <button class="letter-button" id="letterButton">
+                Jangan dibaca bikin merinding soalnya 😳
+            </button>
+            <div class="letter-content" id="letterContent">
+                <p>
+    Halo sengkuuu, partner bengong profesional yang rela nunggu sunset dari jam siang bolong 😭🌅
+</p>
+
+<p>
+    Kita datang kepagian banget, matahari masih di atas kepala, 
+    tapi kita udah duduk manis kayak dua manusia galau😭.
+</p>
+
+<p>
+    Orang lain mungkin mikir mereka berdua ngapain. 
+    Padahal kita cuma pengen lihat langit berubah warna 😂
+    Bengong bareng, scroll HP bentar (padahal gada sinyal), ngobrol random (ikan aneh lompat-lompat), terus bengong lagi. 
+    Dan entah kenapa… aku merasa seneng banaget waktu itu :)
+</p>
+
+<p>
+    Pas akhirnya sunsetnya dateng, kita malah diem (ga sesuai ekspektasi). 
+    Kayak semesta lagi bilang, “nih ya, kalian nungguin dari tadi.”
+    Tapi jujur, yang bikin momen itu lucu bukan langitnya…
+    tapi kita yang kayak NPC nunggu cutscene dimulai.
+</p>
+
+<p>
+    Jadi gimana? Kapan kita jadi duo overthinking yang nungguin sunset lagi?
+    Explore alam lagi, bengong lagi, dan pura-pura bijak tiap lihat langit jingga? 🌄✨
+</p>
+                <p style="text-align: right; margin-top: 30px; font-style: italic;">
+                    — Yang seneng explore bareng dirimuu? ❤️
+                </p>
+            </div>
+        </section>
+
+        <div style="height: 100px;"></div>
+    </div>
+
+    <!-- ==================== MODAL ==================== -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">×</span>
+            <h2>Warning! ⚠️</h2>
+            <p id="modalText">Terlalu imut untuk dunia nyata 🥺</p>
+        </div>
+    </div>
+
+    <!-- ==================== SECRET MESSAGE ==================== -->
+    <div class="secret-message" id="secretMessage">
+        <h2>🔓 Secret Unlocked!</h2>
+        <p>Psst... kamu tau kan kenapa sunset jadi lebih cantik?</p>
+        <p>Karena kamu yang ngeliatin! 😊</p>
+        <p style="margin-top: 20px; font-size: 1rem; color: #999;">
+            (Tekan ESC untuk tutup)
+        </p>
+    </div>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // ==================== TYPING ANIMATION ====================
+        const typingTexts = [
+            "Where every moment feels like a sunset kiss...",
+            "You + Me + Sunset = Perfect Equation ❤️",
+            "Love is watching sunsets together... and stealing fries 😋"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeText() {
+            const typingElement = document.getElementById('typingText');
+            const currentText = typingTexts[textIndex];
+
+            if (!isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex);
+                charIndex++;
+
+                if (charIndex > currentText.length) {
+                    isDeleting = true;
+                    setTimeout(typeText, 2000);
+                    return;
+                }
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % typingTexts.length;
+                    setTimeout(typeText, 500);
+                    return;
+                }
+            }
+
+            setTimeout(typeText, isDeleting ? 50 : 100);
+        }
+
+        setTimeout(typeText, 2000);
+
+        // ==================== BUTTON ACTIONS ====================
+        const modal = document.getElementById('modal');
+        const modalText = document.getElementById('modalText');
+        const modalClose = document.getElementById('modalClose');
+
+        const messages = [
+            "Kamu bikin jantung gue kayak sunrise - cepet banget naik! 💓",
+            "Ikan hiu nabrak kaca, i love you buat yang bacaa !!🥰",
+            "Plot twist: Kamu ternyata lebih indah dari golden hour 🥰",
+        ];
+
+        document.getElementById('hugButton').addEventListener('click', function() {
+            createConfetti();
+            showModal(messages[Math.floor(Math.random() * messages.length)]);
+        });
+
+        document.getElementById('loveButton').addEventListener('click', function() {
+            createConfetti();
+            showModal(messages[Math.floor(Math.random() * messages.length)]);
+        });
+
+        function showModal(text) {
+            modalText.textContent = text;
+            modal.classList.add('show');
+        }
+
+        modalClose.addEventListener('click', function() {
+            modal.classList.remove('show');
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+
+        // ==================== CONFETTI ====================
+        function createConfetti() {
+            const colors = ['#d4a574', '#c9955a', '#b8926a', '#a0826d', '#8b7355'];
+            
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                    confetti.style.opacity = '0.7';
+                    document.body.appendChild(confetti);
+
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 40);
+            }
+        }
+
+        // ==================== CURSOR HEARTS ====================
+        let heartTimeout;
+        document.addEventListener('mousemove', function(e) {
+            clearTimeout(heartTimeout);
+            heartTimeout = setTimeout(() => {
+                if (Math.random() > 0.8) {
+                    const heart = document.createElement('div');
+                    heart.className = 'cursor-heart';
+                    heart.textContent = ['💕', '💖', '💗', '💓', '💝'][Math.floor(Math.random() * 5)];
+                    heart.style.left = e.pageX + 'px';
+                    heart.style.top = e.pageY + 'px';
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => heart.remove(), 2000);
+                }
+            }, 100);
+        });
+
+        // ==================== FLOATING HEARTS ====================
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.textContent = ['💕', '💖', '💗', '💓'][Math.floor(Math.random() * 4)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 10000);
+        }
+
+        setInterval(createFloatingHeart, 8000);
+
+        // ==================== SUN CLICK ====================
+        const sun = document.getElementById('sun');
+        let sunClickCount = 0;
+        const sunMessages = [
+            "Hehe, ticklish! 😊",
+            "Even I can't compete with your warmth 🌟",
+            "Stop making me blush! 😳",
+            "You're brighter than me, you know? ✨",
+            "Okay okay, you win the brightness contest! 💫"
+        ];
+
+        sun.addEventListener('click', function() {
+            sun.classList.add('blushing');
+            
+            // Show cute message
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(245, 245, 220, 0.95);
+                color: #5d4e37;
+                padding: 20px 30px;
+                border-radius: 15px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                z-index: 9999;
+                animation: fadeInUp 0.5s ease;
+                text-align: center;
+            `;
+            messageDiv.textContent = sunMessages[sunClickCount % sunMessages.length];
+            document.body.appendChild(messageDiv);
+            
+            sunClickCount++;
+            
+            setTimeout(() => {
+                sun.classList.remove('blushing');
+                messageDiv.style.animation = 'fadeOut 0.5s ease';
+                setTimeout(() => messageDiv.remove(), 500);
+            }, 2000);
+        });
+
+        // ==================== PHOTO CARD HOVER ====================
+        const funFacts = [
+            "Did you know? Sunsets are never the same twice! ☀️",
+            "Fun fact: The best memories are made during golden hour 📸",
+            "Science says: Watching sunsets together strengthens bonds 💕",
+            "True story: This moment is already a favorite memory 🌅",
+            "Plot twist: Every sunset is a promise of a new sunrise together 🌄",
+            "Random fact: Your smile is brighter than any sunset 😊"
+        ];
+
+        document.querySelectorAll('.photo-card').forEach((card, index) => {
+            card.addEventListener('mouseenter', function() {
+                const sparkles = ['✨', '⭐', '💫', '🌟'];
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const sparkle = document.createElement('div');
+                        sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+                        sparkle.style.position = 'absolute';
+                        sparkle.style.left = Math.random() * 100 + '%';
+                        sparkle.style.top = Math.random() * 100 + '%';
+                        sparkle.style.pointerEvents = 'none';
+                        sparkle.style.animation = 'cursorHeartFloat 1s ease-out forwards';
+                        card.appendChild(sparkle);
+
+                        setTimeout(() => sparkle.remove(), 1000);
+                    }, i * 100);
+                }
+            });
+
+            // Double click for fun fact
+            card.addEventListener('dblclick', function() {
+                const factDiv = document.createElement('div');
+                factDiv.style.cssText = `
+                    position: fixed;
+                    bottom: 30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: linear-gradient(135deg, #f5f5dc, #f0e8d8);
+                    color: #5d4e37;
+                    padding: 15px 25px;
+                    border-radius: 12px;
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                    z-index: 9999;
+                    animation: fadeInUp 0.5s ease;
+                    max-width: 80%;
+                    text-align: center;
+                `;
+                factDiv.textContent = funFacts[Math.floor(Math.random() * funFacts.length)];
+                document.body.appendChild(factDiv);
+
+                setTimeout(() => {
+                    factDiv.style.animation = 'fadeOut 0.5s ease';
+                    setTimeout(() => factDiv.remove(), 500);
+                }, 3000);
+            });
+        });
+
+        // ==================== LETTER REVEAL ====================
+        const letterButton = document.getElementById('letterButton');
+        const letterContent = document.getElementById('letterContent');
+
+        letterButton.addEventListener('click', function() {
+            letterContent.classList.add('show');
+            letterButton.style.display = 'none';
+        });
+
+        // ==================== COUNTER ====================
+        function updateCounter() {
+            const startDate = new Date('2026-02-01'); // Ganti dengan tanggal mulai
+            const today = new Date();
+            const diffTime = Math.abs(today - startDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            const counterElement = document.getElementById('daysCounter');
+            let currentNumber = 0;
+            const increment = Math.ceil(diffDays / 50);
+            
+            const countInterval = setInterval(() => {
+                currentNumber += increment;
+                if (currentNumber >= diffDays) {
+                    currentNumber = diffDays;
+                    clearInterval(countInterval);
+                }
+                counterElement.textContent = currentNumber;
+            }, 30);
+        }
+
+        updateCounter();
+
+        // ==================== SCROLL ANIMATION ====================
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+
+        // ==================== MINI GAME ====================
+        const gameArea = document.getElementById('gameArea');
+        const gameScore = document.getElementById('gameScore');
+        const gameMessage = document.getElementById('gameMessage');
+        let score = 0;
+        let gameInterval;
+
+        function startGame() {
+            gameInterval = setInterval(() => {
+                if (score < 5) {
+                    createFallingHeart();
+                } else {
+                    clearInterval(gameInterval);
+                }
+            }, 1500);
+        }
+
+        function createFallingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'falling-heart';
+            heart.textContent = '💖';
+            heart.style.left = Math.random() * (gameArea.offsetWidth - 40) + 'px';
+            
+            heart.addEventListener('click', function() {
+                score++;
+                gameScore.textContent = score;
+                heart.remove();
+                
+                if (score === 5) {
+                    const winMessages = [
+                        '🎉 Amazing! You caught all the love! 🎉',
+                        '💖 Perfect score! Just like us! 💖',
+                        '✨ You\'re officially a love expert! ✨',
+                        '🌟 Heart collector achievement unlocked! 🌟',
+                        '💕 Love master level achieved! 💕'
+                    ];
+                    gameMessage.textContent = winMessages[Math.floor(Math.random() * winMessages.length)];
+                    clearInterval(gameInterval);
+                    setTimeout(() => {
+                        showSecretMessage();
+                    }, 1000);
+                } else if (score === 3) {
+                    gameMessage.textContent = '💪 Halfway there, you got this!';
+                }
+            });
+
+            gameArea.appendChild(heart);
+
+            setTimeout(() => {
+                if (heart.parentElement) {
+                    heart.remove();
+                }
+            }, 3000);
+        }
+
+        // Start game when section is visible
+        const gameSection = document.querySelector('.game-section');
+        const gameObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && score === 0) {
+                    startGame();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        gameObserver.observe(gameSection);
+
+        // ==================== SECRET MESSAGE ====================
+        let secretSequence = '';
+        const secretCode = 'LOVE';
+
+        document.addEventListener('keypress', function(e) {
+            secretSequence += e.key.toUpperCase();
+            
+            if (secretSequence.length > secretCode.length) {
+                secretSequence = secretSequence.slice(-secretCode.length);
+            }
+            
+            if (secretSequence === secretCode) {
+                showSecretMessage();
+                secretSequence = '';
+            }
+        });
+
+        function showSecretMessage() {
+            const secretMsg = document.getElementById('secretMessage');
+            secretMsg.classList.add('show');
+            createConfetti();
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const secretMsg = document.getElementById('secretMessage');
+                secretMsg.classList.remove('show');
+            }
+        });
+
+        // ==================== MUSIC CONTROL ====================
+        const musicToggle = document.getElementById('musicToggle');
+        let isPlaying = false;
+
+        musicToggle.addEventListener('click', function() {
+            isPlaying = !isPlaying;
+            musicToggle.textContent = isPlaying ? '🔇' : '🎵';
+        });
+
+        // ==================== ERROR MESSAGE ====================
+        let clickCount = 0;
+        let clickTimer;
+        const excitedMessages = [
+            "Woah, someone's excited! 🎉",
+            "Easy there, tiger! 🐯",
+            "Slow down, we've got all evening! 🌅",
+            "Your enthusiasm is adorable but... breathe! 😊",
+            "Plot twist: This isn't a speed-clicking competition 😆"
+        ];
+
+        document.addEventListener('click', function() {
+            clickCount++;
+            clearTimeout(clickTimer);
+            
+            clickTimer = setTimeout(() => {
+                if (clickCount > 40) {
+                    const randomMessage = excitedMessages[Math.floor(Math.random() * excitedMessages.length)];
+                    showModal(randomMessage);
+                    clickCount = 0;
+                } else {
+                    clickCount = 0;
+                }
+            }, 3000);
+        });
+
+        // ==================== CONSOLE EASTER EGG ====================
+        console.log('%c💕 Happy Valentine! 💕', 'font-size: 30px; color: #8b5a3c; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);');
+        console.log('%c🌅 Welcome to our sunset story...', 'font-size: 18px; color: #d4a574; font-weight: bold;');
+        console.log('%cFun fact: Sunsets are never the same, just like our moments together 😊', 'font-size: 14px; color: #a0826d; font-style: italic;');
+        console.log('%c✨ Psst... ketik "LOVE" di keyboard untuk unlock secret message! 🤫', 'font-size: 12px; color: #c9955a; font-weight: 600;');
+        console.log('%c🎮 Pro tip: Double-click photo cards for fun facts!', 'font-size: 12px; color: #8b7355;');
+        console.log('%c💫 Try clicking the sun... it might surprise you! 😉', 'font-size: 12px; color: #ffd7ba;');
+    </script>
+</body>
+</html>
